@@ -1,7 +1,12 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 
-const Screen02 = () => {
+const Screen02 = ({ navigation }) => {
+    const navigateProductScreen = () => {
+        navigation.navigate('Screen01', {
+            color: color
+        });
+    }
     const [color, setColor] = useState('blue')
     return (
         <View style={styles.container}>
@@ -29,7 +34,7 @@ const Screen02 = () => {
                         style={[styles.selectColorButton, styles.colorBlue]}
                     ></TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.applyButton}>
+                <TouchableOpacity style={styles.applyButton} onPress={navigateProductScreen}>
                     <Text style={styles.applyButtonText}>XONG</Text>
                 </TouchableOpacity>
             </View>

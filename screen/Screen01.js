@@ -2,11 +2,14 @@ import { TouchableOpacity } from 'react-native';
 import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 
-const screen01 = () => {
+const Screen01 = ({ route, navigation }) => {
+  const navigateSelectColorScreen = () => {
+    navigation.navigate('Screen02');
+  }\
   return (
     <View style={styles.container}>
       <View style={styles.productContainer}>
-        <Image source={require('../assets/vs_blue.png')} style={styles.phoneImage} />
+        <Image source={require(`../assets/vs_blue.png`)} style={styles.phoneImage} />
         <View style={styles.productInformation}>
           <Text style={styles.productName}>Điện Thoại Vsmart Joy 3 - Hàng chính hãng</Text>
           <View style={styles.rateContainer}>
@@ -27,7 +30,7 @@ const screen01 = () => {
             <Text style={styles.rebateText}>Ở ĐÂU RẺ HƠN HOÀN TIỀN</Text>
             <Image source={require('../assets/Group 1.png')} style={{ width: 20, height: 20, marginHorizontal: 8 }} />
           </View>
-          <TouchableOpacity style={styles.selectColorButton}>
+          <TouchableOpacity style={styles.selectColorButton} onPress={navigateSelectColorScreen}>
             <Text style={styles.selectColorButtonText}>4 MÀU-CHỌN MÀU</Text>
             <Image source={require('../assets/Vector.svg')}
               style={{ position: 'absolute', right: 15, top: 10, width: 11.5, height: 14 }} />
@@ -136,4 +139,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default screen01
+export default Screen01
