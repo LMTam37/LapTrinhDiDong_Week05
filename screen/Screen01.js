@@ -5,11 +5,11 @@ import { StyleSheet, Text, View } from 'react-native';
 const Screen01 = ({ route, navigation }) => {
   const navigateSelectColorScreen = () => {
     navigation.navigate('Screen02');
-  }\
+  }
   return (
     <View style={styles.container}>
       <View style={styles.productContainer}>
-        <Image source={require(`../assets/vs_blue.png`)} style={styles.phoneImage} />
+        <Image source={require(`../assets/vs_${route.params?.color || 'blue'}.png`)} style={styles.phoneImage} />
         <View style={styles.productInformation}>
           <Text style={styles.productName}>Điện Thoại Vsmart Joy 3 - Hàng chính hãng</Text>
           <View style={styles.rateContainer}>

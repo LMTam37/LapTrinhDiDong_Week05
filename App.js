@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import Screen01 from './screen/screen01';
+import Screen01 from './screen/Screen01';
 import Screen02 from './screen/Screen02';
 import { NavigationContainer } from '@react-navigation/native';
 
